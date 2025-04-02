@@ -36,6 +36,16 @@ services:
       - 9411:9411
     networks:
       - zipkin
+  mysql:
+      image: mysql:latest
+      container_name: mysql_server
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: "root"
+        MYSQL_DATABASE: "data_jpa"
+        MYSQL_USER: "learn"
+        MYSQL_PASSWORD: "12345"
 
 networks:
   zipkin:
